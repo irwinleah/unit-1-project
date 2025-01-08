@@ -123,8 +123,8 @@ const categories = {
         },
         {
             question: "Where is Arcwind Point?",
-            answers: ["North of Dragon Bridge", "South of Haemar's Shame", "East of Shor's Stone", "West of Pinewatch"],
-            correctAnswer: "South of Haemar's Shame"
+            answers: [`North of Dragon Bridge`, `South of Haemar's Shame`, `East of Shor's Stone`, `West of Pinewatch`],
+            correctAnswer: `South of Haemar's Shame`
         },
         {
             question: "What is the base carry weight? (Not Survival Mode)",
@@ -208,23 +208,23 @@ const categories = {
         },
         {
             question: "What abilities does the Dunmer race have?",
-            answers: ["Can enter Orc Strongholds without becoming Blood-kin, Berserker Rage", "50% disease & poison resistance, Command Animals", "+50 magicka, Highborn", "50% fire resistance, Ancestor’s Wrath"],
-            correctAnswer: "50% fire resistance, Ancestor’s Wrath"
+            answers: [`Can enter Orc Strongholds without becoming Blood-kin, Berserker Rage`, `50% disease & poison resistance, Command Animals`, `+50 magicka, Highborn`, `50% fire resistance, Ancestor’s Wrath`],
+            correctAnswer: `50% fire resistance, Ancestor’s Wrath`
         },
         {
             question: "What level can you buy a house outside Falkreath and how much coin?",
-            answers: ["Level 15, 12,000 coins", "Level 9, 5,000 coins", "Level 20, 10,000 coins", "Level 10, 4,000 coins"],
-            correctAnswer: "Level 9, 5,000 coins"
+            answers: [`Level 15, 12,000 coins`, `Level 9, 5,000 coins`, `Level 20, 10,000 coins`, `Level 10, 4,000 coins`],
+            correctAnswer: `Level 9, 5,000 coins`
         },
         {
             question: "What ingredients do you need to make a water breathing potion?",
-            answers: ["Nirnroot, blue mountain flower, luna moth wing", "Lavender, salt, bear claws", "Chicken’s egg, hiscarp, nordic barnacle", "Glow dust, garlic, mudcrab chitin"],
-            correctAnswer: "Chicken’s egg, hiscarp, nordic barnacle"
+            answers: [`Nirnroot, blue mountain flower, luna moth wing`, `Lavender, salt, bear claws`, `Chicken’s egg, hiscarp, nordic barnacle`, `Glow dust, garlic, mudcrab chitin`],
+            correctAnswer: `Chicken’s egg, hiscarp, nordic barnacle`
         },
         {
             question: "How does owning/riding a horse help you in Skyrim?",
-            answers: ["Can help you find wheat and carrots easier", "Mounted combat, carry capacity increase, run faster", "Allows you to become a knight", "Less chance of being robbed"],
-            correctAnswer: "Mounted combat, carry capacity increase, run faster"
+            answers: [`Can help you find wheat and carrots easier`, `Mounted combat, carry capacity increase, run faster`, `Allows you to become a knight`, `Less chance of being robbed`],
+            correctAnswer: `Mounted combat, carry capacity increase, run faster`
         },
         {
             question: "Who do you talk to about adoption (child)?",
@@ -263,8 +263,8 @@ const categories = {
         },
         {
             question: "Perks of getting married in Skyrim?",
-            answers: ["Daily allowance of gold, home cooked meal, follower potential, “Lover’s Comfort”", "Home cooked meal, battle partner, you are gifted a horse", "Allows you to buy a larger house, daily allowance, receive the Amulet of Mara", "Restoration spells reduced by 10%, 15% speech increase"],
-            correctAnswer: "Daily allowance of gold, home cooked meal, follower potential, “Lover’s Comfort”"
+            answers: [`Daily allowance of gold, home cooked meal, follower potential, “Lover’s Comfort”`, `Home cooked meal, battle partner, you are gifted a horse`, `Allows you to buy a larger house, daily allowance, receive the Amulet of Mara`, `Restoration spells reduced by 10%, 15% speech increase`],
+            correctAnswer: `Daily allowance of gold, home cooked meal, follower potential, “Lover’s Comfort”`
         },
         {
             question: "How do you make a frost atronach?",
@@ -291,8 +291,8 @@ const categories = {
         },
         {
             question: "What is the name of the magical map that shows the entire layout of Hogwarts?",
-            answers: ["Luna’s Map", "Marauder’s Map", "Errol’s Map", "McGonagall’s Map"],
-            correctAnswer: "Marauder's Map"
+            answers: [`Luna’s Map`, `Marauder's Map`, `Errol’s Map`, `McGonagall’s Map`],
+            correctAnswer: `Marauder's Map`
         },
         {
             question: "What is Harry’s middle name?",
@@ -336,7 +336,7 @@ const categories = {
         },
         {
             question: "What position in Quidditch does Harry play?",
-            answers: ["Bonker", "Seeker", "Striker", "Goalie"],
+            answers: ["Beater", "Seeker", "Chaser", "Goalie"],
             correctAnswer: "Seeker"
         },
         {
@@ -386,8 +386,8 @@ const categories = {
         },
         {
             question: "Where was Harry Potter born?",
-            answers: ["Godric’s Hollow", "Deathly Hallows", "Diagon Alley", "Grey Mansion"],
-            correctAnswer: "Godric's Hollow"
+            answers: [`Godric's Hollow`, `Deathly Hallows`, `Diagon Alley`, `Grey Mansion`],
+            correctAnswer: `Godric's Hollow`
         },
         {
             question: "What is the name of the Gryffindor ghost?",
@@ -437,7 +437,7 @@ const categories = {
         {
             question: "What class does Professor McGonagall teach?",
             answers: ["Potions", "Incantations", "Transfigurations", "Quidditch"],
-            correctAnswer: "Transfiguarations"
+            correctAnswer: "Transfigurations"
         },
         {
             question: "Who kills Dobby?",
@@ -466,8 +466,8 @@ const categories = {
         },
         {
             question: "Where is the entrance to the Chamber of Secrets hidden?",
-            answers: ["Ravenclaw's common room", "Library", "The girls’ bathroom", "Professor McGonagall’s office"],
-            correctAnswer: "The girls' bathroom"
+            answers: [`Ravenclaw's common room`, `Library`, `The girls’ bathroom`, `Professor McGonagall’s office`],
+            correctAnswer: `The girls’ bathroom`
         },
         {
             question: "What house is Justin Finch-Fletchley in?",
@@ -546,7 +546,8 @@ const questionContainer = document.getElementById("question-container") //contai
 console.log(questionContainer);
 const scoreEl = document.getElementById("score"); //display current score
 const resetButton = document.getElementById("resetButton"); //button element to reset quiz
-
+const gameStart = document.querySelector(".game-start") //because it's a class
+const message = document.getElementById("gameMessage")
 // Booleans that help track the state of the game
 let questionAnswered = false //keeps track of whether the current question has been answered yet, starts false because no answer has been selected yet
 let resetButtonClicked = false //tracks whether the reset button has been clicked
@@ -555,17 +556,12 @@ let answeredQuestions = 0; // counter for answered questions
 
 skyrimCat.addEventListener("click", init) // waiting for user to click the category 
 harryPotterCat.addEventListener("click", init) //will then run the init function
-
+resetButton.addEventListener("click", resetQuiz)
 answerA.addEventListener("click", checkAnswer)//waiting for user to click an answer choice 
 answerB.addEventListener("click", checkAnswer)//and will then run check answer function on 
 answerC.addEventListener("click", checkAnswer) //what the user clicked
 answerD.addEventListener("click", checkAnswer)
-resetButton.addEventListener("click", resetQuiz); //waiting for click to then trigger resetquiz function
-//
-document.addEventListener('DOMContentLoaded', function () {
-    // Now your DOM elements are available
-    const questionContainer = document.getElementById('question-container');
-});
+
 
 
 
@@ -577,6 +573,8 @@ function init(evt) {
     console.log(categoryQuestions) // to ensure the correct set of questions is being loaded
     renderQuestions(); //responsible for dispalying the first question in the selected category on the page. This might involved populating the HTML with the question and asnwer options
     resetQuiz(); // reset for game to start fresh
+    gameStart.style.visibility = "hidden"
+    questionContainer.style.visibility = "visible"
 }   
 // flow for init function: -when a user clicks a category the init func is called
                         // -the score is reset to 0 to start fresh
@@ -601,6 +599,8 @@ function renderQuestions() {
     answerC.style.backgroundColor = "#f0f0f0"
     answerD.style.backgroundColor = "#f0f0f0"
     questionIdx = Math.floor(Math.random()*50)+1; // this line generates a random index (questionIdx) between 1 and 50, it uses Math.random() to generate a random decimal number between 0 and 1, multiplies that by 50 to scale it, and then uses Math.floor() to round it down to the nearest whole number. Adding 1 ensures that the range of possible indices is between 1 and 50(not 0 and 49)
+    // questionIdx = 2
+    
     questionEl.innerText = categoryQuestions[questionIdx].question //this sets the inner text to questionEl element to the question text of the randomly selected question: //categoryQuestions[questionIdx] accesses the question at the index questionIdx // .question is accessing the text of the question itself
     answerA.innerText = categoryQuestions[questionIdx].answers[0] //these lines update the inner text of the answer buttons with possible answer choices. It takes the answers for the randomly selected question and assigns them to the respective answer buttons. // categoryQuestions[questionIdx].answers refers to an array containing the four answer choices. // the answers are displayed on the page as the options for the user to choose from.
     answerB.innerText = categoryQuestions[questionIdx].answers[1]
@@ -624,7 +624,7 @@ function renderQuestions() {
 //   4. Update UI:
 //        -the question text and the answer options (A, B, C, D) are displayed on the page
 //   5. Remove next button:
-//        - if a "Next" button exhoists from the previous question, it is removed from the DOM to 
+//        - if a "Next" button exhists from the previous question, it is removed from the DOM to 
 //          clean up the UI for the next question
 
 
@@ -632,6 +632,8 @@ function renderQuestions() {
 function checkAnswer(evt) {
     if (questionAnswered) return // checks if the question has been answered, this prevents the user from answering the same question multiple times
     console.log(evt.target.id) // logs the ID of the clicked answer button to the console.
+    // console.log(categoryQuestions[questionIdx].correctAnswer)
+    // console.log(categoryQuestions[questionIdx].answers[1])
     if (evt.target.id === "a") { 
         if (categoryQuestions[questionIdx].answers[0] === categoryQuestions[questionIdx].correctAnswer){
         score += 1 // this section checks to see if the user clicked on A and if A is correct or not, compares .answers to .correctAnswer
@@ -661,6 +663,8 @@ function checkAnswer(evt) {
             answerD.style.backgroundColor = "red"
         }
     }
+    // console.log(score)
+    scoreEl.innerText = `Score: ${score}`
     answeredQuestions++;
     if (answeredQuestions >= 10) {
         endGame();
@@ -703,33 +707,26 @@ function endGame() {
     if (nextButton) {
         nextButton.disabled = true;
     }
-    const message = document.createElement("div");
+    scoreEl.innerText = `Score: ${score}`
     message.innerText = `Game Over! Your final score is: ${score}`;
     questionContainer.appendChild(message);
+    resetButton.style.visibility = "visible";
 
-    const resetButton = document.createElement("button");
-    resetButton.innerText = "Restart Game";
-    resetButton.addEventListener("click", resetQuiz);
-    questionContainer.appendChild(resetButton);
 }
 
 function resetQuiz(evt) {
-    const questionContainer = document.getElementById("question-container");
     score = 0;
     answeredQuestions = 0;
     scoreEl.innerText = `Score: ${score}`;
-    //
-    while (container.firstChild) {
-        container.removeChild(container.firstChild);
-    }
-    //
-    questionContainer.innerHTML = '';
 
+    questionContainer.style.visibility = "hidden";
+    gameStart.style.visibility = "visible";
+    resetButton.style.visibility = "hidden";
     answerA.disabled = false;
     answerB.disabled = false;
     answerC.disabled = false;
     answerD.disabled = false;
-
+    message.innerText = "";
     resetButtonClicked = false;
     questionAnswered = false;
     // reset score to 0, score variable update what you see on the page in your innertext
