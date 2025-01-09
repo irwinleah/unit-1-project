@@ -1,0 +1,109 @@
+body {
+    background-color: gold;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+}
+
+title {
+    text-align: centered;
+}
+
+
+h1,
+h2,
+h3 {
+    text-align: center;
+}
+
+h1 {
+    font-size: 50px;
+    color: #081da7;
+    font-weight: 1900;
+    font-style: oblique;
+}
+
+h2{
+    font-size: 40px;
+    color: #081da7;
+    font-weight:300;
+}
+
+#skyrimQuestions, 
+#harryPotterQuestions {
+    margin: 10px 10px 10px 10px;
+    padding: 10px;
+    font-size: 25px;
+    font-style: oblique;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    background-color: #081da7;
+    color: white;
+    flex-direction: row;
+}
+
+.game-start {
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+}
+
+#question-container {
+    margin: auto;
+    width: 75%;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    color: rgb(14, 14, 102);
+}
+
+h3 {
+    font-size: 25px;
+    color: #081da7;
+    font-weight: 300;
+}
+
+#a,
+#b,
+#c,
+#d {
+    margin: 5px;
+    padding: 5px 5px;
+    font-size: 20px;
+    border-radius: 50px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #081da7;
+}
+
+h4 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 35px;
+    color: green;
+}
+
+#next {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#score-container {
+    display: flex;
+    justify-content: center;
+
+}
+
+
+#gameMessage {
+    display: flex;
+    justify-content: center;
+    
+}
+
+#resetButton {
+    display: flex;
+    background-color: #081da7;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 5px 10px 5px 10px;
+    border-radius: 50px;
+}

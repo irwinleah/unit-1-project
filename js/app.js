@@ -543,7 +543,7 @@ const answerB = document.getElementById("b"); // answer options
 const answerC = document.getElementById("c");
 const answerD = document.getElementById("d");
 const questionContainer = document.getElementById("question-container") //container element that wraps the questions and answers
-console.log(questionContainer);
+questionContainer.style.visibility = "hidden";
 const scoreEl = document.getElementById("score"); //display current score
 const resetButton = document.getElementById("resetButton"); //button element to reset quiz
 const gameStart = document.querySelector(".game-start") //because it's a class
@@ -575,20 +575,20 @@ function init(evt) {
     resetQuiz(); // reset for game to start fresh
     gameStart.style.visibility = "hidden"
     questionContainer.style.visibility = "visible"
-}   
+}
 // flow for init function: -when a user clicks a category the init func is called
-                        // -the score is reset to 0 to start fresh
-                        // - the category's questions are loaded based on which category was clicked using the evt.target.id
-                        // -the questions are logged to the console for debugging
-                        // -the questions are rendered on the page using renderQuestions(), which likely displays the current question and answer choices
-                        // -the quiz state is reset with resetQuiz() to prepare for the new quiz
+// -the score is reset to 0 to start fresh
+// - the category's questions are loaded based on which category was clicked using the evt.target.id
+// -the questions are logged to the console for debugging
+// -the questions are rendered on the page using renderQuestions(), which likely displays the current question and answer choices
+// -the quiz state is reset with resetQuiz() to prepare for the new quiz
 
-        // 1. User clicks on a category (skyrim or harry potter)
-        // 2. the init function starts:
-        //    - resets the score to 0
-        //    - loads the questions for the selected category
-        //    - displays the first question and answers
-        //    - resets any previous state
+// 1. User clicks on a category (skyrim or harry potter)
+// 2. the init function starts:
+//    - resets the score to 0
+//    - loads the questions for the selected category
+//    - displays the first question and answers
+//    - resets any previous state
 
 function renderQuestions() {
     console.log(score) // logs current score here to debug and make sure we are grabbing the correct element
@@ -598,16 +598,16 @@ function renderQuestions() {
     answerB.style.backgroundColor = "#f0f0f0" //they don't stay red or green
     answerC.style.backgroundColor = "#f0f0f0"
     answerD.style.backgroundColor = "#f0f0f0"
-    questionIdx = Math.floor(Math.random()*50)+1; // this line generates a random index (questionIdx) between 1 and 50, it uses Math.random() to generate a random decimal number between 0 and 1, multiplies that by 50 to scale it, and then uses Math.floor() to round it down to the nearest whole number. Adding 1 ensures that the range of possible indices is between 1 and 50(not 0 and 49)
+    questionIdx = Math.floor(Math.random() * 50) + 1; // this line generates a random index (questionIdx) between 1 and 50, it uses Math.random() to generate a random decimal number between 0 and 1, multiplies that by 50 to scale it, and then uses Math.floor() to round it down to the nearest whole number. Adding 1 ensures that the range of possible indices is between 1 and 50(not 0 and 49)
     // questionIdx = 2
-    
+
     questionEl.innerText = categoryQuestions[questionIdx].question //this sets the inner text to questionEl element to the question text of the randomly selected question: //categoryQuestions[questionIdx] accesses the question at the index questionIdx // .question is accessing the text of the question itself
     answerA.innerText = categoryQuestions[questionIdx].answers[0] //these lines update the inner text of the answer buttons with possible answer choices. It takes the answers for the randomly selected question and assigns them to the respective answer buttons. // categoryQuestions[questionIdx].answers refers to an array containing the four answer choices. // the answers are displayed on the page as the options for the user to choose from.
     answerB.innerText = categoryQuestions[questionIdx].answers[1]
     answerC.innerText = categoryQuestions[questionIdx].answers[2]
     answerD.innerText = categoryQuestions[questionIdx].answers[3]
     const nextButton = document.getElementById("next"); // this line searches for an HTML element with the ID "next". Presumably, this is a "Next" button that allows the user to go to the next question once thye've answered the current one.
-    if (nextButton){ //this checks if the "Next" button (nextButton) exists in the DOM: // if the nextButton is found, it will be removed from the questionContainer. This might happen when the user answers the question, and a "Next" button is created dynamically for the user to click and move to the next question. Removing the button ensures that the UI is cleaned up before displaying the new question. // If the nextButton doesn't exist the function simply returns early and does nothing so no action is taken.
+    if (nextButton) { //this checks if the "Next" button (nextButton) exists in the DOM: // if the nextButton is found, it will be removed from the questionContainer. This might happen when the user answers the question, and a "Next" button is created dynamically for the user to click and move to the next question. Removing the button ensures that the UI is cleaned up before displaying the new question. // If the nextButton doesn't exist the function simply returns early and does nothing so no action is taken.
         questionContainer.removeChild(nextButton)
     } else {
         return
@@ -634,31 +634,31 @@ function checkAnswer(evt) {
     console.log(evt.target.id) // logs the ID of the clicked answer button to the console.
     // console.log(categoryQuestions[questionIdx].correctAnswer)
     // console.log(categoryQuestions[questionIdx].answers[1])
-    if (evt.target.id === "a") { 
-        if (categoryQuestions[questionIdx].answers[0] === categoryQuestions[questionIdx].correctAnswer){
-        score += 1 // this section checks to see if the user clicked on A and if A is correct or not, compares .answers to .correctAnswer
-        answerA.style.backgroundColor = "green"
+    if (evt.target.id === "a") {
+        if (categoryQuestions[questionIdx].answers[0] === categoryQuestions[questionIdx].correctAnswer) {
+            score += 1 // this section checks to see if the user clicked on A and if A is correct or not, compares .answers to .correctAnswer
+            answerA.style.backgroundColor = "green"
         } else { // adds 1 point and makes it green if correct, makes it red if not correct
             answerA.style.backgroundColor = "red"
         }
-    } else if (evt.target.id === "b") { 
-        if (categoryQuestions[questionIdx].answers[1] === categoryQuestions[questionIdx].correctAnswer){
-        score += 1
-        answerB.style.backgroundColor = "green"
+    } else if (evt.target.id === "b") {
+        if (categoryQuestions[questionIdx].answers[1] === categoryQuestions[questionIdx].correctAnswer) {
+            score += 1
+            answerB.style.backgroundColor = "green"
         } else {
             answerB.style.backgroundColor = "red"
         }
-    } else if (evt.target.id === "c") { 
-        if (categoryQuestions[questionIdx].answers[2] === categoryQuestions[questionIdx].correctAnswer){
-        score += 1
-        answerC.style.backgroundColor = "green"
+    } else if (evt.target.id === "c") {
+        if (categoryQuestions[questionIdx].answers[2] === categoryQuestions[questionIdx].correctAnswer) {
+            score += 1
+            answerC.style.backgroundColor = "green"
         } else {
             answerC.style.backgroundColor = "red"
         }
-    } else if (evt.target.id === "d") { 
-        if (categoryQuestions[questionIdx].answers[3] === categoryQuestions[questionIdx].correctAnswer){
-        score += 1
-        answerD.style.backgroundColor = "green"
+    } else if (evt.target.id === "d") {
+        if (categoryQuestions[questionIdx].answers[3] === categoryQuestions[questionIdx].correctAnswer) {
+            score += 1
+            answerD.style.backgroundColor = "green"
         } else {
             answerD.style.backgroundColor = "red"
         }
@@ -698,40 +698,57 @@ function checkAnswer(evt) {
 // Next Question: once the answer is selected, the user can click the "Next" button to proceed to the next question
 
 function endGame() {
-    answerA.disabled = true;
+    answerA.disabled = true; //this disables the buttons so the user can't click on them once the game has ended
     answerB.disabled = true;
     answerC.disabled = true;
     answerD.disabled = true;
 
-    const nextButton = document.getElementById("next");
-    if (nextButton) {
-        nextButton.disabled = true;
+    const nextButton = document.getElementById("next"); //this lione is searching for an HTML element with the id="next" and storing it in the variable nextButton. The nextButton could be the button used to proceed to the next question or may to restart the game
+    if (nextButton) { //checks if the nextButton exists, if it does it disables the button, essentially it prevents 
+        nextButton.disabled = true; //any further actions after the game ends
     }
-    scoreEl.innerText = `Score: ${score}`
-    message.innerText = `Game Over! Your final score is: ${score}`;
-    questionContainer.appendChild(message);
-    resetButton.style.visibility = "visible";
-
+    scoreEl.innerText = `Score: ${score}` //this updates the text for the player to see thier current score, The player
+    message.innerText = `Game Over! Your final score is: ${score}`; // will see their final score at the end of game
+    questionContainer.appendChild(message); // this adds the messahe element to another container element called questionContainer. this makes the game over message visible on the screen. The message was likely created beforehand, and now it's added to the DOM so the player can see it
+    resetButton.style.visibility = "visible"; //makes the reset button visible. allows the user to restart the game once the game has ended.
 }
 
-function resetQuiz(evt) {
-    score = 0;
-    answeredQuestions = 0;
-    scoreEl.innerText = `Score: ${score}`;
+// FLOW OF EXECUTION
+// when endGame() is called:
+// 1. all the answer buttons (answerA, answerB, answerC, answerD) are disabled to prevent further input.
+// 2. if there's a "Next" button (nextButton), it's disabled too.
+// 3. The score is displayed by updating the text content of scoreEl.
+// 4. A game-over message is displayed by setting the text of message and appending it to questionContainer.
+// 5. The reset button (resetButton) is made visible, allowing the user to restart the game
 
-    questionContainer.style.visibility = "hidden";
-    gameStart.style.visibility = "visible";
-    resetButton.style.visibility = "hidden";
-    answerA.disabled = false;
+function resetQuiz(evt) {
+    score = 0; // sets the score to 0 when the game is reset
+    answeredQuestions = 0; // sets answeredQuestions to 0 so the count can start over, this variable keeps track of how many questions the player has answered
+    scoreEl.innerText = `Score: ${score}`; // update the scoreEl element to 0 becuase the score has just been reset to 0
+
+    questionContainer.style.visibility = "hidden"; // hides the questionsContainer element once game has been reset until a new game has started
+    gameStart.style.visibility = "visible"; // makes the gameStart element visible again, the choose your category portion
+    resetButton.style.visibility = "hidden"; //hides the reset button until the end
+    answerA.disabled = false; // this enables the answers to be clicked on again, game has reset so it needs to be interactive again
     answerB.disabled = false;
     answerC.disabled = false;
     answerD.disabled = false;
-    message.innerText = "";
-    resetButtonClicked = false;
-    questionAnswered = false;
+    message.innerText = ""; // clears the text content of the message element. When the gsme ends and a "Game Over" messgae was shown, we need to clear that message when the game is reset
+    resetButtonClicked = false; // set the variable called resetButtonClicked to false, it likely tracks whether the reset button was clicked, and resetting it to falsse helps manage the state of the reset process
+    questionAnswered = false; // this resets the questionAnswered flag to false, this variable might track if the user has answered the current question, resetting it ensures thaht the next question will be treated as unanswered
     // reset score to 0, score variable update what you see on the page in your innertext
     // clear questions, clear elements inside the questionContainer
-    renderQuestions();
-   }
+    renderQuestions(); // this calls the renderQuestions function, which handles the logic of rendering questions, after resetting everything else, renderQuestions() would reinitialize the questions and possible set up new ones for the player to answer
+}
+
+// Flow of Execution:
+// when resetQuiz(evt) is called:
+// 1. it resets the score to 0 and updates the score display.
+// 2. The game UI is updated to hide the current question container and show the start game section again.
+// 3. All answer buttons are re-enabled for the next round.
+// 4. the reset button is hidden until needed again.
+// 5. The message element is cleared to remove any "GameOver" text.
+// 6. Flags like resetButtonClicked and questionAnswered are reset to their initial states.
+// 7. Finally, the renderQuestions() function is called, which will likely generate new questions and display them to the user.
 
 // next steps every time you click the button the number of rounds goes up, once you reach 10 rounds the game is over, then score pops up and then another button to play another round pops up
