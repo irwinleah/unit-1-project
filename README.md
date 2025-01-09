@@ -1,9 +1,25 @@
 
 # Trivia Game
-## Allows you to pick between two categories, Skyrim or Harry Potter, to test your knowledge in a round of 10 randomized questions from a question bank. 
+//insert screenshot here//
 
-This project is an example of a trivia game that was built along with a software engineer immersive progam project assignment. 
+**Created by Leah Irwin**
+## Allows you to pick between two categories, Skyrim or Harry Potter, to test your knowledge in a round of 10 randomized questions from a question bank. I enjoy the game Skyrim and the story of Harry Potter and wanted to challenge myself to random facts and tibits about each, so I created this trivia game.
 
+## How to Play:
+
+<details open>
+<summary> Instructions </summary>
+
+1. Press a category button.
+2. The computer will pick your question for you out of a bank of questions.
+3. Choose what you think is the correct answer out of the four answer choices given. Choose carefully you can only pick once!
+4. If your answer is correct, your answer will turn green and a point will be added to your score. If your answer is incorrect, your answer will turn red and no point will be added to your score.
+5. Press the "Next" button to move on to the next question.
+6. Repeat this until all ten questions have been answered and your final score appears.
+7. To play the trivia game again, press the "Reset Game button.
+8. Once the game has been reset, you will have the option again to pick from one of the two categories.
+
+   
 ## Atrributions:
 The following are links that were utilized in created the trivia game questions. Most are not my original questions.
 
@@ -19,8 +35,8 @@ Javasript, HTML, CSS
 
 ## Next Steps:
 
-
-Screenshot/Logo: A screenshot of your app or a logo.
-Your game’s name: Include a description of your game and what it does. Background info about the game and why you chose it is a nice touch.
-Getting started: Include a link to your deployed game and any instructions you deem important. This should also contain a link to your planning materials.
-Next steps: Planned future enhancements (stretch goals).
+1. Adding a timer
+2. Adding more rounds that increase in difficultly and user can only move on to the next round if the current round was won (at least 7 out of 10 correct)
+3. Sound effects
+4. Graphics
+   
