@@ -632,8 +632,6 @@ function renderQuestions() {
 function checkAnswer(evt) {
     if (questionAnswered) return // checks if the question has been answered, this prevents the user from answering the same question multiple times
     console.log(evt.target.id) // logs the ID of the clicked answer button to the console.
-    // console.log(categoryQuestions[questionIdx].correctAnswer)
-    // console.log(categoryQuestions[questionIdx].answers[1])
     if (evt.target.id === "a") {
         if (categoryQuestions[questionIdx].answers[0] === categoryQuestions[questionIdx].correctAnswer) {
             score += 1 // this section checks to see if the user clicked on A and if A is correct or not, compares .answers to .correctAnswer
@@ -663,7 +661,7 @@ function checkAnswer(evt) {
             answerD.style.backgroundColor = "red"
         }
     }
-    // console.log(score)
+
     scoreEl.innerText = `Score: ${score}`
     answeredQuestions++;
     if (answeredQuestions >= 10) {
