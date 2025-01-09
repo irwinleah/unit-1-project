@@ -1,29 +1,3 @@
-// Trivia:
-// Player will be able to pick from two categories and the questions will pool from whichever category they choose from
-
-// Questions will randomly pulled from a list and based off the category picked
-
-// There will be no time limit on the questions
-
-// Points added for correct answers and the answer they select 
-// will be green if correct
-
-// Points will not be added or taken away if answer is wrong and the answer they select will be red if wrong
-
-// Player wins if 7 out of 10 questions are correct, anything below will be considered a loss.
-
-// Each round will host 10 questions total, once you’ve gone 
-// through a round there will be a restart button.
-
-// If player wins some graphic effect will pop up.
-
-// If player loses try better next time will pop up.
-
-// There will be a point counter on the side.
-
-// If player misses more than 3 questions before all of the 
-// questions have been shown, they will still be able to see all ten questions pooled for that round.
-
 const categories = {
     skyrimQuestions: [
         {
@@ -52,7 +26,7 @@ const categories = {
             correctAnswer: "Southeast of Saarthal"
         },
         {
-            question: "How is your reward for completing Kagrumez?",
+            question: "what is your reward for completing Kagrumez?",
             answers: ["Orcish Greatsword of Destiny", "Elven Shield of Great Protection", "5 Black Soul Gems filled with Grand Souls", "Dwarven Black Bow of Fate"],
             correctAnswer: "Dwarven Black Bow of Fate"
         },
