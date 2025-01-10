@@ -24,7 +24,7 @@ https://irwinleah.github.io/unit-1-project/
 4. If your answer is correct, your answer will turn green and a point will be added to your score. If your answer is incorrect, your answer will turn red and no point will be added to your score.
 5. Press the "Next" button to move on to the next question.
 6. Repeat this until all ten questions have been answered and your final score appears.
-7. To play the trivia game again, press the "Reset Game button.
+7. To play the trivia game again, press the "Reset Game" button.
 8. Once the game has been reset, you will have the option again to pick from one of the two categories.
 
    
