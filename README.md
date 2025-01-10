@@ -6,7 +6,8 @@
 
 <div id="header" align="center">
 
-  <img src="[https://imgur.com/a/aKfk7YM](https://imgur.com/a/iDiwDw8)" width="800" height="400">
+ ![image](https://github.com/user-attachments/assets/c5f674bb-022d-40c0-8384-4133229066bb)
+
 
 </div>
 
