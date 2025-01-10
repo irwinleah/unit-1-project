@@ -1,9 +1,14 @@
 
 # Trivia Game
-//insert screenshot here//
-
 **Created by Leah Irwin**
+
 ## Allows you to pick between two categories, Skyrim or Harry Potter, to test your knowledge in a round of 10 randomized questions from a question bank. I enjoy the game Skyrim and the story of Harry Potter and wanted to challenge myself to random facts and tibits about each, so I created this trivia game.
+
+<div id="header" align="center">
+
+  <img src="[https://imgur.com/a/aKfk7YM](https://imgur.com/a/iDiwDw8)" width="800" height="400">
+
+</div>
 
 ## How to Play:
 
