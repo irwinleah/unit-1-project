@@ -580,7 +580,7 @@ function renderQuestions() {
     answerB.innerText = categoryQuestions[questionIdx].answers[1]
     answerC.innerText = categoryQuestions[questionIdx].answers[2]
     answerD.innerText = categoryQuestions[questionIdx].answers[3]
-    const nextButton = document.getElementById("next"); // this line searches for an HTML element with the ID "next". Presumably, this is a "Next" button that allows the user to go to the next question once thye've answered the current one.
+    const nextButton = document.getElementById("Next"); // this line searches for an HTML element with the ID "next". Presumably, this is a "Next" button that allows the user to go to the next question once thye've answered the current one.
     if (nextButton) { //this checks if the "Next" button (nextButton) exists in the DOM: // if the nextButton is found, it will be removed from the questionContainer. This might happen when the user answers the question, and a "Next" button is created dynamically for the user to click and move to the next question. Removing the button ensures that the UI is cleaned up before displaying the new question. // If the nextButton doesn't exist the function simply returns early and does nothing so no action is taken.
         questionContainer.removeChild(nextButton)
     } else {
@@ -609,28 +609,28 @@ function checkAnswer(evt) {
     if (evt.target.id === "a") {
         if (categoryQuestions[questionIdx].answers[0] === categoryQuestions[questionIdx].correctAnswer) {
             score += 1 // this section checks to see if the user clicked on A and if A is correct or not, compares .answers to .correctAnswer
-            answerA.style.backgroundColor = "green"
+            answerA.style.backgroundColor = "#20c22d"
         } else { // adds 1 point and makes it green if correct, makes it red if not correct
             answerA.style.backgroundColor = "red"
         }
     } else if (evt.target.id === "b") {
         if (categoryQuestions[questionIdx].answers[1] === categoryQuestions[questionIdx].correctAnswer) {
             score += 1
-            answerB.style.backgroundColor = "green"
+            answerB.style.backgroundColor = "#20c22d"
         } else {
             answerB.style.backgroundColor = "red"
         }
     } else if (evt.target.id === "c") {
         if (categoryQuestions[questionIdx].answers[2] === categoryQuestions[questionIdx].correctAnswer) {
             score += 1
-            answerC.style.backgroundColor = "green"
+            answerC.style.backgroundColor = "#20c22d"
         } else {
             answerC.style.backgroundColor = "red"
         }
     } else if (evt.target.id === "d") {
         if (categoryQuestions[questionIdx].answers[3] === categoryQuestions[questionIdx].correctAnswer) {
             score += 1
-            answerD.style.backgroundColor = "green"
+            answerD.style.backgroundColor = "#20c22d"
         } else {
             answerD.style.backgroundColor = "red"
         }
@@ -642,9 +642,9 @@ function checkAnswer(evt) {
         endGame();
     } else {
         const nextButton = document.createElement("button"); // creates a new button element dynamically in the javascript code. This button will allow the user to move on to the next question
-        nextButton.innerText = "next" //this sets the text of the newly created button to "next" so the button will appear with that label on the page
+        nextButton.innerText = "Next" //this sets the text of the newly created button to "next" so the button will appear with that label on the page
         nextButton.addEventListener("click", renderQuestions) //attaches an event listener to the "Next" button. When cliked it triggers the renderQuestions function. This will likely display the next question and update the UI accordingly
-        nextButton.setAttribute("id", "next") // this sets the id attribute of the "Next" button to "next", this ensures that the button has a unqiue ID, which is useful if you want to reference it in other parts of the code
+        nextButton.setAttribute("id", "Next") // this sets the id attribute of the "Next" button to "next", this ensures that the button has a unqiue ID, which is useful if you want to reference it in other parts of the code
         questionContainer.appendChild(nextButton) //this append the "Next" button to the questionContainer element, which is the HTML container where the question and answers are displayed. this adds the button to the page so the user can click it.
         questionAnswered = true; // this sets the questionAnswered flag to true, indicating that he current question has been answered. This prevents the user from answering the same question multiple times.
     }
@@ -675,7 +675,7 @@ function endGame() {
     answerC.disabled = true;
     answerD.disabled = true;
 
-    const nextButton = document.getElementById("next"); //this lione is searching for an HTML element with the id="next" and storing it in the variable nextButton. The nextButton could be the button used to proceed to the next question or may to restart the game
+    const nextButton = document.getElementById("Next"); //this lione is searching for an HTML element with the id="next" and storing it in the variable nextButton. The nextButton could be the button used to proceed to the next question or may to restart the game
     if (nextButton) { //checks if the nextButton exists, if it does it disables the button, essentially it prevents 
         nextButton.disabled = true; //any further actions after the game ends
     }
